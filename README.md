@@ -35,27 +35,19 @@
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **[tour-spec](https://github.com/evander-wang/tour-spec)** · Lua
 A spec says how a call chain is cut into stations, where each one lives, and why you walk there. Rendered into Neovim and into an HTML code map from the same file.
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **[pi-next-steps](https://github.com/evander-wang/pi-next-steps)** · TypeScript
 Proposes up to three next steps after every turn: fill one into the editor, or hand any of them to a fresh agent in a new pane.
 
 </td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-**[open-design](https://github.com/evander-wang/open-design)** · TypeScript
-A design plugin for the DeepSeek harness — local-first, open-source take on Claude Design.
-
-</td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **[paste_manater](https://github.com/evander-wang/paste_manater)** · Dart
 A Flutter clipboard manager for pasting across devices.
@@ -63,8 +55,6 @@ A Flutter clipboard manager for pasting across devices.
 </td>
 </tr>
 </table>
-
----
 
 ### Open source contributions
 
