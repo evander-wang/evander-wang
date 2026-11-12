@@ -1,33 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img"
-     aria-label="evolution — AI agent tooling, editor plugins, open source">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="200" viewBox="0 0 1280 200" role="img"
+     aria-label="Tools that make a codebase walkable — one spec, two consumers">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef2f7"/>
+      <stop offset="0" stop-color="#f6f8fa"/><stop offset="1" stop-color="#eaeff5"/>
     </linearGradient>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#0969da"/><stop offset="1" stop-color="#1a7f37"/>
     </linearGradient>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#c3ccd6"/>
+    </marker>
   </defs>
-  <rect width="1280" height="320" fill="url(#bg)"/>
-  <rect width="1280" height="6" fill="url(#bar)"/>
-  <!-- 链路 motif：一站一站连起来 -->
-  <g stroke="#c8d3de" stroke-width="2" fill="none">
-    <path d="M980 214 H 1052 V 170 H 1124 V 126 H 1196"/>
+
+  <rect width="1280" height="200" fill="url(#bg)"/>
+  <rect width="1280" height="4" fill="url(#thread)"/>
+
+  <!-- 左：一句陈述 -->
+  <text x="64" y="86" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" letter-spacing="-0.8"
+        fill="#1f2328">Tools that make a codebase walkable.</text>
+  <text x="64" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#57606a">call-chain walkthroughs · agent plugins · upstream fixes</text>
+
+  <!-- 右：一份 spec → 两个消费端 -->
+  <g>
+    <rect x="852" y="77" width="128" height="46" rx="6" fill="#ffffff" stroke="#c3ccd6"/>
+    <text x="916" y="106" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="17" fill="#1f2328">spec.json</text>
+
+    <path d="M980 100 H 1010" stroke="#c3ccd6" stroke-width="2" fill="none" marker-end="url(#arrow)" opacity="0"/>
+    <path d="M980 100 H 1012" stroke="#c3ccd6" stroke-width="2" fill="none"/>
+    <path d="M1012 57 V 143" stroke="#c3ccd6" stroke-width="2" fill="none"/>
+    <path d="M1012 57 H 1028" stroke="#c3ccd6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <path d="M1012 143 H 1028" stroke="#c3ccd6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="1032" y="34" width="184" height="46" rx="6" fill="#ffffff" stroke="#0969da"/>
+    <text x="1124" y="63" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" fill="#1f2328">Neovim walkthrough</text>
+
+    <rect x="1032" y="120" width="184" height="46" rx="6" fill="#ffffff" stroke="#0969da"/>
+    <text x="1124" y="149" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" fill="#1f2328">HTML code map</text>
   </g>
-  <g fill="#ffffff" stroke="#0969da" stroke-width="2">
-    <circle cx="980" cy="214" r="9"/><circle cx="1052" cy="170" r="9"/>
-    <circle cx="1124" cy="126" r="9"/><circle cx="1196" cy="126" r="9"/>
-  </g>
-  <g fill="#0969da">
-    <circle cx="980" cy="214" r="4"/><circle cx="1052" cy="170" r="4"/>
-    <circle cx="1124" cy="126" r="4"/><circle cx="1196" cy="126" r="4"/>
-  </g>
-  <text x="72" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18"
-        letter-spacing="3" fill="#6e7781">GITHUB PROFILE</text>
-  <text x="72" y="186" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="62" font-weight="700" letter-spacing="-1" fill="#1f2328">evolution</text>
-  <text x="72" y="222" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="19"
-        fill="#57606a">evander-wang · TAL Beijing</text>
-  <text x="72" y="272" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="23" fill="#424a53">AI agent tooling · editor plugins · open source</text>
 </svg>

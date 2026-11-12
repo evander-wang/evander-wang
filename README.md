@@ -1,16 +1,12 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg">
-  <img src="./assets/banner-light.svg" alt="evolution — AI agent tooling, editor plugins, open source" width="100%">
+  <img src="./assets/banner-light.svg" alt="Tools that make a codebase walkable — call-chain walkthroughs, agent plugins, upstream fixes" width="100%">
 </picture>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/-TAL%20Beijing-1f2328?style=flat-square" alt="TAL Beijing">
-  <img src="https://img.shields.io/badge/-Beijing%2C%20China-1f2328?style=flat-square" alt="Beijing">
   <img src="https://img.shields.io/badge/focus-AI%20agent%20tooling-0969da?style=flat-square" alt="focus: AI agent tooling">
-  <img src="https://img.shields.io/badge/editor-Neovim-57A143?style=flat-square&logo=neovim&logoColor=white" alt="Neovim">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go">
-  <img src="https://img.shields.io/badge/Lua-2C2D72?style=flat-square&logo=lua&logoColor=white" alt="Lua">
+  <img src="https://img.shields.io/badge/editor-Neovim-57A143?style=flat-square&logo=neovim&logoColor=white" alt="editor: Neovim">
+  <img src="https://img.shields.io/badge/lang-TypeScript%20%C2%B7%20Go%20%C2%B7%20Lua-1f2328?style=flat-square" alt="TypeScript, Go, Lua">
 </p>
 
 <p align="center">
