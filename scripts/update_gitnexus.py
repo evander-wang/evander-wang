@@ -22,7 +22,9 @@ if START not in text or END not in text:
     sys.exit(0)
 
 body = f'★{fmt_stars(data["stars"])} · contributor with **{data["mergedPRs"]}** merged pull requests'
-new = re.sub(re.escape(START) + r".*?" + re.escape(END), START + body + END, text, flags=re.S)
+# 标记必须各占一行：inline HTML 注释会让 GitHub 把整行当原始 HTML，**粗体** 就不生效了
+block = f"> {START}\n> {body}\n> {END}"
+new = re.sub(r"^> " + re.escape(START) + r"(?:\n> .*)*?\n> " + re.escape(END), block, text, flags=re.M)
 if new == text:
     print("no change")
 else:
