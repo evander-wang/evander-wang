@@ -35,22 +35,41 @@
 
 <table>
 <tr>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 
 **[tour-spec](https://github.com/evander-wang/tour-spec)** · Lua
 A spec says how a call chain is cut into stations, where each one lives, and why you walk there. Rendered into Neovim and into an HTML code map from the same file.
 
 </td>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 
 **[pi-next-steps](https://github.com/evander-wang/pi-next-steps)** · TypeScript
 Proposes up to three next steps after every turn: fill one into the editor, or hand any of them to a fresh agent in a new pane.
 
 </td>
-<td width="33%" valign="top">
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**[pi-token-speed](https://github.com/evander-wang/pi-token-speed)** · TypeScript
+Live output token rate in the pi status bar. Sliding 3-second window, stall/burst correction (a 500-token flush after a 6 s stall reads ~83 tok/s, not thousands), paused while tools run.
+
+</td>
+<td width="50%" valign="top">
+
+**[pi-task-timer](https://github.com/evander-wang/pi-task-timer)** · TypeScript
+Elapsed time of the current agent task in the pi status bar — survives retries and compaction runs, prints the final duration once the agent settles.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
 **[paste_manater](https://github.com/evander-wang/paste_manater)** · Dart
 A Flutter clipboard manager for pasting across devices.
+
+</td>
+<td width="50%" valign="top">
 
 </td>
 </tr>
