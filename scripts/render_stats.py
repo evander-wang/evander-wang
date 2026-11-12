@@ -5,7 +5,7 @@ import json, pathlib, sys
 data = json.loads(pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "stats.json").read_text())
 u = data["data"]["user"]
 kpis = [
-    (f'{u["contributionsCollection"]["contributionCalendar"]["totalContributions"]:,}', "contributions · last year"),
+    (f'{u["contributionsCollection"]["contributionCalendar"]["totalContributions"]:,}', "contributions (all types) · last year"),
     (f'{u["repositories"]["totalCount"]:,}', "public repos"),
     (f'{u["pullRequests"]["totalCount"]:,}', "merged pull requests"),
 ]

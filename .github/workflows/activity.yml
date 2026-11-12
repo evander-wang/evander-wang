@@ -12,34 +12,53 @@ concurrency:
   group: activity
   cancel-in-progress: true
 
+env:
+  LOGIN: evander-wang
+  UPSTREAM_OWNER: abhigyanpatwari
+  UPSTREAM_REPO: GitNexus
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch stats (GraphQL, 单次请求)
+      - name: Fetch my stats
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LOGIN: ${{ github.repository_owner }}
         run: |
           gh api graphql -f query='
           query($login: String!) {
             user(login: $login) {
               repositories(privacy: PUBLIC, ownerAffiliations: OWNER) { totalCount }
               pullRequests(states: MERGED) { totalCount }
-              contributionsCollection { totalCommitContributions contributionCalendar { totalContributions } }
+              contributionsCollection { contributionCalendar { totalContributions } }
             }
           }' -f login="$LOGIN" > stats.json
 
-      - name: Render SVG (light + dark)
-        run: python3 scripts/render_stats.py stats.json
+      - name: Fetch upstream (GitNexus) stats
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql -f query='
+          query($owner: String!, $name: String!, $q: String!) {
+            repository(owner: $owner, name: $name) { stargazerCount }
+            search(query: $q, type: ISSUE, first: 1) { issueCount }
+          }' \
+            -f owner="$UPSTREAM_OWNER" -f name="$UPSTREAM_REPO" \
+            -f q="repo:$UPSTREAM_OWNER/$UPSTREAM_REPO is:pr is:merged author:$LOGIN" \
+          | jq '{stars: .data.repository.stargazerCount, mergedPRs: .data.search.issueCount}' > gitnexus.json
+
+      - name: Render SVGs + patch README
+        run: |
+          python3 scripts/render_stats.py stats.json
+          python3 scripts/update_gitnexus.py gitnexus.json
 
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/activity-light.svg assets/activity-dark.svg
+          git add assets/activity-light.svg assets/activity-dark.svg README.md
           if git diff --cached --quiet; then
             echo "no change"
           else
